@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+int main()
+{ int a[10],x,i,j;    // (not being able to generalise it so took array size of 10 so enter 10 elements in a[10] (this is input)
+  for(i=1;i<=10;i++)   //1 se start krke a[10] ke largest ya last element tak natural numbers ki array create ki which is b[10]
+  {
+      cin>>a[i];      //suppose a[10]={1,3,5,6,7,8,9,10,11,13}  so b[10]={1,2,3,...13}
+  }
+  x=a[10];       
+  int b[x],c[x];                     
+  for(j=1;j<=x;j++)   
+  {
+     b[j]=j;
+  }
+  int m=1;
+  int k=1;
+  for(i=;i<=10;i++)
+  {  for(j=m;j<=x;j++)
+      {
+         if(a[i]!=b[j])       //a[1]!=b[1]  or 1!=1 which is not true so j++ 
+         {                    //a[1]!=b[2]  or 1!=2 which is true so c[1]=b[2]    or 1st element of array c is b[2]=2 then k++ or k=2 
+            c[k]=b[j];
+            k++;
+         }
+         else
+         { m=j+1;
+           break;
+
+         }
+
+      }
+
+
+  }
+  for(k=1;k<=x-i+1;k++)
+  {
+    cout<<c[k]<<endl;    //all elements which are not there in b[10] are listed in c[10] and i have made an output of them
+  }
+
+
+}
